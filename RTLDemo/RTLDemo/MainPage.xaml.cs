@@ -24,5 +24,10 @@ namespace RTLDemo
         {
             Navigation.PushAsync(new RTLForm());
         }
+
+        private void Button_Clicked_2(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new RTLWithValidation());
+        }
     }
 }
