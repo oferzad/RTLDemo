@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RTLDemo.LTRForm"
+             Title="Left To Right">
+    <ContentPage.Content>
+        <StackLayout Padding="0,20,0,0">
+
+            <Label Text="Name" FontSize="Small" />
+            <Entry Placeholder="Enter Your Name" />
+            <Label Text="Age" FontSize="Small" />
+            <Entry Placeholder="Age" FontSize="Small">
+            </Entry>
+
+            <Label Text="DOB" FontSize="Small" />
+            <DatePicker >
+            </DatePicker>
+
+            <Label Text="Email" FontSize="Small" />
+            <Entry Placeholder="Enter Your Email ID" >
+            </Entry>
+            <Label Text="Password" FontSize="Small" />
+            <Entry x:Name="txtpassword" IsPassword="True" Placeholder="Enter Your Password" >
+            </Entry>
+
+            <Label Text="Confirm Password" FontSize="Small" />
+            <Entry IsPassword="True" Placeholder="Enter same as above" >
+            </Entry>
+            <Label Text="Phone Number" FontSize="Small" />
+            <Entry  Placeholder="Enter 10 digit phone number" >
+            </Entry>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
