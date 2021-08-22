@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using Xamarin.Forms;
 
 namespace RTLDemo.ViewModels
 {
@@ -108,7 +109,30 @@ namespace RTLDemo.ViewModels
             this.ShowNameError = false;
             this.AgeError = "הגיל חייב להיות גדול מ 13";
             this.ShowAgeError = false;
+            this.SaveDataCommand = new Command(() => SaveData());
         }
 
+        //This function validate the entire form upon submit!
+        private bool ValidateForm()
+        {
+            //Validate all fields first
+            ValidateAge();
+            ValidateName();
+
+            //check if any validation failed
+            if (ShowAgeError ||
+                ShowNameError)
+                return false;
+            return true;
+        }
+
+        public Command SaveDataCommand { protected set; get; }
+        private async void SaveData()
+        {
+            if (ValidateForm())
+                await App.Current.MainPage.DisplayAlert("שמירת נתונים", "הנתונים נבדקו ונשמרו", "אישור", FlowDirection.RightToLeft);
+            else
+                await App.Current.MainPage.DisplayAlert("שמירת נתונים", "יש בעיה עם הנתונים", "אישור", FlowDirection.RightToLeft);
+        }
     }
 }

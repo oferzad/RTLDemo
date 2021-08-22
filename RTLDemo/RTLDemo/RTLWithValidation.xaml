@@ -68,6 +68,7 @@
             <Label Text="טלפון" FontSize="Small" />
             <Entry  Placeholder="הכנס טלפון בן 10 ספרות" >
             </Entry>
+            <Button Text="שמור נתונים" Command="{Binding SaveDataCommand}"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
